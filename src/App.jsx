@@ -1,11 +1,12 @@
+import Header from './Components/Home/Header.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Started working and in sync </h1>
-    </>
+    <div className=" h-100 bg-white p-3">
+    <Header />
+      <h1 className="text-primary">Started working and in sync </h1>
+    </div>
   )
 }
 
