@@ -5,7 +5,7 @@ export default function Card({title, desc, cta, image}){
 }
 	
 return (
-		<div style={cardStyle} className="card d-flex flex-column">
+		<div style={cardStyle} className="card d-flex flex-column shadow-lg">
 			<img src={image} alt={title} />
 			<div className="card-body flex-grow-1 d-flex flex-column">
 				<h4 className="card-title text-center text-danger text-decoration-underline">{title}</h4>
