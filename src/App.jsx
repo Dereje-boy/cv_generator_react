@@ -1,17 +1,15 @@
 import {Outlet } from 'react-router-dom';
 import Header from './Components/Home/Header.jsx';
-import Cards from './Components/Home/Cards.jsx';
 import Footer from './Components/Home/Footer.jsx';
 
 function App() {
-
+	
+	
   return (
-    <div className=" h-100 p-3">
+    <div className=" h-100 p-3 d-flex flex-column">
     <Header />
     
-	<Outlet />
-	
-	<Cards />
+	<Outlet className="flex-grow-1"/>
 	
 	 < Footer /> 
 	

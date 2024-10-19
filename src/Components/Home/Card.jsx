@@ -1,3 +1,5 @@
+import {Link } from 'react-router-dom';
+
 export default function Card({title, desc, cta, image}){
 	const cardStyle = {
 		width: 300,
@@ -12,7 +14,7 @@ return (
 				<div className="card-text d-flex flex-grow-1 flex-column justify-content-center"> 
 					<p className="fs-6 text-justify">{desc}</p>
 				</div>
-				<a href="/" className="btn btn-primary align-self-center">{cta}</a>
+				<Link to={cta} className="btn btn-primary align-self-center">{cta}</Link>
 			</div>
 			
 		</div>
