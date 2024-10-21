@@ -8,6 +8,7 @@ import Cards from './Components/Home/Cards.jsx';
 import PersonalInformation from './Pages/PersonalInformation.jsx';
 import Education from './Pages/Education.jsx';
 import Experience from './Pages/Experience.jsx';
+import Language from './Pages/Language.jsx';
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 
@@ -27,6 +28,9 @@ const router = createBrowserRouter([
 		},{
 			path:"experience",
 			element: <Experience />
+		},{
+			path:"language",
+			element: <Language />
 		}]
 	},{
 		
