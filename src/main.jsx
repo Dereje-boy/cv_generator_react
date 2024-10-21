@@ -10,7 +10,7 @@ import Education from './Pages/Education.jsx';
 import Experience from './Pages/Experience.jsx';
 import Language from './Pages/Language.jsx';
 import Reference from './Pages/Reference.jsx';
-
+import Hobbies from './Pages/Hobbies.jsx';
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 
@@ -36,6 +36,9 @@ const router = createBrowserRouter([
 		},{
 			path:"reference",
 			element: <Reference />
+		},{
+			path:"hobbies",
+			element: <Hobbies />
 		}]
 	},{
 		
