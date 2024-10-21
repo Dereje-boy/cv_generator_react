@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cards from './Components/Home/Cards.jsx';
 import PersonalInformation from './Pages/PersonalInformation.jsx';
 import Education from './Pages/Education.jsx';
+import Experience from './Pages/Experience.jsx';
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 
@@ -23,6 +24,9 @@ const router = createBrowserRouter([
 		},{
 			path:"education",
 			element: <Education />
+		},{
+			path:"experience",
+			element: <Experience />
 		}]
 	},{
 		
