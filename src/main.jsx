@@ -9,6 +9,8 @@ import PersonalInformation from './Pages/PersonalInformation.jsx';
 import Education from './Pages/Education.jsx';
 import Experience from './Pages/Experience.jsx';
 import Language from './Pages/Language.jsx';
+import Reference from './Pages/Reference.jsx';
+
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 
@@ -31,6 +33,9 @@ const router = createBrowserRouter([
 		},{
 			path:"language",
 			element: <Language />
+		},{
+			path:"reference",
+			element: <Reference />
 		}]
 	},{
 		

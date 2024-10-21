@@ -48,9 +48,9 @@ function giveActions() {
 			cta:"Language",
 			image: language
 		},{
-			title: 'References',
+			title: 'Reference',
 			desc: 'Always it is better to have reference who knows you very well, to express you in the way that gives you better chance for further assessement',
-			cta: 'References',
+			cta: 'Reference',
 			image: reference
 	},{
 			title: 'Hobbies',
