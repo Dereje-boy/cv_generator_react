@@ -12,6 +12,8 @@ import Language from './Pages/Language.jsx';
 import Reference from './Pages/Reference.jsx';
 import Hobbies from './Pages/Hobbies.jsx';
 import GetCV from './Pages/GetCV.jsx';
+import Login from './Pages/Login.jsx';
+
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 
@@ -43,6 +45,9 @@ const router = createBrowserRouter([
 		},{
 			path:"getcv",
 			element:<GetCV />
+		},{
+			path:"login",
+			element:<Login />
 		}]
 	},{
 		

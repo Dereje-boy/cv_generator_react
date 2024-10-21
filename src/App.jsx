@@ -6,10 +6,12 @@ function App() {
 	
 	
   return (
-    <div className=" h-100 p-3 d-flex flex-column">
+    <div style={{minHeight:"100vh"}}  className=" h-100 p-3 d-flex flex-column">
     <Header />
     
-	<Outlet className="flex-grow-1"/>
+	<div className="flex-grow-1 h-100">
+		<Outlet />
+	</div>
 	
 	 < Footer /> 
 	
