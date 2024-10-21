@@ -1,13 +1,15 @@
 import HobbiesImage from '/src/images/hobbies.jpg';
 import {Form} from 'react-router-dom';
 
+//important components
+import CreateFormControl from '../Components/CreateFormControl.jsx';
+import TopImage from '../Components/TopImage.jsx';
+
+
 export default function Hobbies(){
 return(
 	<div className="d-flex flex-row flex-wrap justify-content-center gap-5 pt-5 px-1">
-		<div className="d-flex flex-column gap-2 ">
-			<h3 className="card-title text-center text-danger ">Hobbies</h3>
-			<img style={{width:300}} src={HobbiesImage} alt="hobbies image" />
-		</div>
+		<TopImage imageSrc = {HobbiesImage} title="Hobbies"/>
 	
 		<Form style={{maxWidth:400}} method="post"  className="d-flex flex-column gap-3 shadow p-2">
 		
@@ -19,13 +21,3 @@ return(
 
 
 );}
-
-function CreateFormControl({name, type, value,label, ph,desc,  required}){
-	return(
-		<div class="form-group border border-1 p-2">
-		    <label for={name}>{label}</label>
-		    <input type={type} class="form-control" placeholder={"example: "+ph} required={required}/>
-		    <small class="form-text text-muted">{desc}</small>
-	  </div>
-	);
-}

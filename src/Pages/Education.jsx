@@ -1,15 +1,16 @@
 import EducationImage from '/src/images/education.jpg';
 import {Form} from 'react-router-dom';
 
+//important components
+import CreateFormControl from '../Components/CreateFormControl.jsx';
+import TopImage from '../Components/TopImage.jsx';
+
 export default function Education(){
 return(
 	<div className="d-flex flex-row flex-wrap align-items-center justify-content-center gap-5 pt-5 px-2">
-		<div className="d-flex flex-column gap-2 ">
-			<h3 className="card-title text-center text-danger ">Education</h3>
-			<img style={{width:300}} src={EducationImage} alt="education image" />
-		</div>
+		<TopImage imageSrc = {EducationImage} title="Education"/>
 	
-		<Form method="post"  className="d-flex flex-column gap-3 shadow p-5">
+		<Form style={{maxWidth:400}} method="post"  className="d-flex flex-column gap-3 shadow p-2">
 			<CreateFormControl name="nameOfUniversity" value="" type="text" label="Name of University" ph="Addis Ababa University" desc=""/>
 			<CreateFormControl name="titleOfDocument" value="" type="text" label="Title of Document" ph="Bsc in Surveying Engineering" desc=""/>
 			
@@ -38,6 +39,8 @@ return(
 
 );}
 
+
+/**
 function CreateFormControl({name, type, value,label, ph,desc}){
 	return(
 		<div class="form-group">
@@ -47,3 +50,4 @@ function CreateFormControl({name, type, value,label, ph,desc}){
 	  </div>
 	);
 }
+**/

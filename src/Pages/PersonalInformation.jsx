@@ -1,15 +1,23 @@
 import personalInformation from '/src/images/personal_information.png';
 import {Form} from 'react-router-dom';
 
+//important components
+import CreateFormControl from '../Components/CreateFormControl.jsx';
+import TopImage from '../Components/TopImage.jsx';
+
+
 export default function PersonalInformation(){
 	return(
 		<div className="d-flex flex-row flex-wrap align-items-center justify-content-center gap-5 pt-5 px-2">
-			<div className="d-flex flex-column gap-2 ">
-				<h3 className="card-title text-center text-danger ">Personal Information</h3>
-				<img style={{height:300}} src={personalInformation} alt="personal information image" />
-			</div>
+			<TopImage imageSrc = {personalInformation} title="Personal Information"/>
+			{/**
+				<div className="d-flex flex-column gap-2 ">
+					<h3 className="card-title text-center text-danger ">Personal Information</h3>
+					<img style={{height:300}} src={personalInformation} alt="personal information image" />
+				</div>
+				**/}
 		
-			<Form method="post"  className="d-flex flex-column gap-3 shadow p-5">
+			<Form style={{maxWidth:400}} method="post"  className="d-flex flex-column gap-3 shadow p-2">
 				<CreateFormControl name="firstname" value="" type="text" label="Firstname" ph="Abebe" desc=""/>
 				<CreateFormControl name="lastname" value="" type="text" label="Lastname" ph="Kebede" desc=""/>
 				
@@ -28,6 +36,7 @@ export default function PersonalInformation(){
 	);
 }
 
+/**
 function CreateFormControl({name, type, value,label, ph,desc}){
 	return(
 		<div class="form-group">
@@ -37,3 +46,5 @@ function CreateFormControl({name, type, value,label, ph,desc}){
 	  </div>
 	);
 }
+
+**/

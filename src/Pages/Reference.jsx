@@ -1,13 +1,14 @@
 import ReferenceImage from '/src/images/reference.jpg';
 import {Form} from 'react-router-dom';
 
+//important components
+import CreateFormControl from '../Components/CreateFormControl.jsx';
+import TopImage from '../Components/TopImage.jsx';
+
 export default function Reference(){
 return(
 	<div className="d-flex flex-row flex-wrap justify-content-center gap-5 pt-5 px-1">
-		<div className="d-flex flex-column gap-2 ">
-			<h3 className="card-title text-center text-danger ">Reference</h3>
-			<img style={{width:300}} src={ReferenceImage} alt="language image" />
-		</div>
+		<TopImage imageSrc = {ReferenceImage} title="Reference"/>
 	
 		<Form style={{maxWidth:400}} method="post"  className="d-flex flex-column gap-3 shadow p-2">
 		
@@ -26,6 +27,7 @@ return(
 
 );}
 
+/**
 function CreateFormControl({name, type, value,label, ph,desc,  required}){
 	return(
 		<div class="form-group border border-1 p-2">
@@ -35,3 +37,4 @@ function CreateFormControl({name, type, value,label, ph,desc,  required}){
 	  </div>
 	);
 }
+**/

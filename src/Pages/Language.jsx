@@ -1,13 +1,15 @@
 import LanguageImage from '/src/images/languages.jpg';
 import {Form} from 'react-router-dom';
 
+//important components
+import CreateFormControl from '../Components/CreateFormControl.jsx';
+import TopImage from '../Components/TopImage.jsx';
+
+
 export default function Language(){
 return(
 	<div className="d-flex flex-row flex-wrap justify-content-center gap-5 pt-5 px-1">
-		<div className="d-flex flex-column gap-2 ">
-			<h3 className="card-title text-center text-danger ">Language</h3>
-			<img style={{width:300}} src={LanguageImage} alt="language image" />
-		</div>
+		<TopImage imageSrc = {LanguageImage} title="Language"/>
 	
 		<Form style={{maxWidth:400}} method="post"  className="d-flex flex-column gap-3 shadow p-2">
 		
@@ -31,6 +33,7 @@ return(
 
 );}
 
+/**
 function CreateFormControl({name, type, value,label, ph,desc,  required}){
 	return(
 		<div class="form-group border border-1 p-2">
@@ -40,3 +43,4 @@ function CreateFormControl({name, type, value,label, ph,desc,  required}){
 	  </div>
 	);
 }
+**/
