@@ -1,4 +1,4 @@
-//import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export default function Navs(){
 
@@ -16,11 +16,10 @@ function CreateNav({path, label}){
 
 return (
 	<li className=" p-1 list-group-item">
-		<a href={path} 
-			className = {({isActive})=> isActive && "bg-primary"} 
-			className="btn btn-outline-primary text-decoration-none">
+		<NavLink to={path} 
+			className = {({ isActive }) => { return isActive ? "btn btn-primary text-decoration-none" : "btn btn-outline-primary text-decoration-none"; }}>
 			{label}
-		</a>
+		</NavLink>
 	</li>
 	
 	);
