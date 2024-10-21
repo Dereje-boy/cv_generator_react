@@ -3,13 +3,13 @@ import {Form} from 'react-router-dom';
 
 export default function PersonalInformation(){
 	return(
-		<div className="d-flex flex-row flex-wrap gap-3 pt-5 px-2">
+		<div className="d-flex flex-row flex-wrap align-items-center justify-content-center gap-5 pt-5 px-2">
 			<div className="d-flex flex-column gap-2 ">
 				<h3 className="card-title text-center text-danger ">Personal Information</h3>
 				<img style={{height:300}} src={personalInformation} alt="personal information image" />
 			</div>
 		
-			<Form method="post"  className="d-flex flex-column gap-3 shadow p-3">
+			<Form method="post"  className="d-flex flex-column gap-3 shadow p-5">
 				<CreateFormControl name="firstname" value="" type="text" label="Firstname" ph="Abebe" desc=""/>
 				<CreateFormControl name="lastname" value="" type="text" label="Lastname" ph="Kebede" desc=""/>
 				

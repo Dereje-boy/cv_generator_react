@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //outlet fit
 import Cards from './Components/Home/Cards.jsx';
 import PersonalInformation from './Pages/PersonalInformation.jsx';
+import Education from './Pages/Education.jsx';
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 
@@ -19,6 +20,9 @@ const router = createBrowserRouter([
 		},{
 			path:"personal information",
 			element: <PersonalInformation />
+		},{
+			path:"education",
+			element: <Education />
 		}]
 	},{
 		
