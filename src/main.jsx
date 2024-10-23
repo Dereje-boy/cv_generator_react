@@ -13,6 +13,7 @@ import Reference from './Pages/Reference.jsx';
 import Hobbies from './Pages/Hobbies.jsx';
 import GetCV from './Pages/GetCV.jsx';
 import Login from './Pages/Login.jsx';
+import Home from './Pages/Home.jsx';
 
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
@@ -21,8 +22,12 @@ const router = createBrowserRouter([
 	{
 		path :"/",
 		element: <App />,
-		children:[{
+		children:[
+		{
 			index: true,
+			element: <Home />
+		},{
+			path:"profiles",
 			element: <Cards />
 		},{
 			path:"personal information",
