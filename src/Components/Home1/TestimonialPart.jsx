@@ -13,7 +13,7 @@ return(
 		testimonial="CV Generator simplifies the way job seekers can have latest CV by only filling their information in the website" />
 	
 	<CreateTestimonial imageSource={face3} fullname="Kibru Bekele" 
-		testimonial="This website makes me feel free to fill my personal information to be shown on my CV to get them later in no time just only by signing in again" />
+		testimonial="This website makes me feel free to fill my personal information to be shown on my CV to get them later in no time just only by logging in again" />
 
 
 </div>

@@ -2,6 +2,7 @@ import ProblemPart from "/src/Components/Home1/ProblemPart.jsx";
 import SolutionsPart from "/src/Components/Home1/SolutionsPart.jsx";
 import PortifolioPart from "/src/Components/Home1/PortifolioPart.jsx";
 import TestimonialPart from "/src/Components/Home1/TestimonialPart.jsx";
+import AboutUsPart from "/src/Components/Home1/AboutUsPart.jsx";
 
 export default function Home(){
 return(
@@ -10,6 +11,7 @@ return(
 		< SolutionsPart />
 		< PortifolioPart />
 		< TestimonialPart />
+		<AboutUsPart />
 		
 	</div>
 );}
