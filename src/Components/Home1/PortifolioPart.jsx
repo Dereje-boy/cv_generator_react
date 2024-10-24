@@ -7,6 +7,7 @@ return (
 	<CreatePortifolio imageSource={design1} title="Dereje Gezahegn" desc="This CV was created by Dereje Gezahegn with this good looking design. We hope him great looking for job time" />
 	<CreatePortifolio imageSource={design2} title="Abeba Kebede" desc="This CV was designed for ABEBE KEBEDE with his preference design. We hope him great looking for job time" />
 	
+	
 </div>
 );}
 
