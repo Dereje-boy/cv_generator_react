@@ -18,6 +18,34 @@ import Home from './Pages/Home.jsx';
 
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 
+const profileChildren = [
+	{
+		index: true,
+		element: <Cards />
+	},{
+		path: "education",
+		element: <Education />
+	},{
+		path:"personal information",
+		element: <PersonalInformation />
+	},{
+		path:"education",
+		element: <Education />
+	},{
+		path:"experience",
+		element: <Experience />
+	},{
+		path:"language",
+		element: <Language />
+	},{
+		path:"reference",
+		element: <Reference />
+	},{
+		path:"hobbies",
+		element: <Hobbies />
+	}
+];
+
 const router = createBrowserRouter([
 	{
 		path :"/",
@@ -27,26 +55,8 @@ const router = createBrowserRouter([
 			index: true,
 			element: <Home />
 		},{
-			path:"profiles",
-			element: <Cards />
-		},{
-			path:"personal information",
-			element: <PersonalInformation />
-		},{
-			path:"education",
-			element: <Education />
-		},{
-			path:"experience",
-			element: <Experience />
-		},{
-			path:"language",
-			element: <Language />
-		},{
-			path:"reference",
-			element: <Reference />
-		},{
-			path:"hobbies",
-			element: <Hobbies />
+			path:"profile",
+			children: profileChildren
 		},{
 			path:"getcv",
 			element:<GetCV />
@@ -54,10 +64,10 @@ const router = createBrowserRouter([
 			path:"login",
 			element:<Login />
 		}]
-	},{
-		
-	},
+	}
 ]);
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode >
