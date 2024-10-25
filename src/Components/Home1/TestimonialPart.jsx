@@ -4,18 +4,19 @@ import face3 from "/src/images/testimonials/face3.png";
 
 export default function TestimonialPart(){
 return(
-<div className="d-flex flex-row gap-3 overflow-auto py-5 px-4">
+<div className="d-flex flex-column gap-1 pt-5">
 	
-	<CreateTestimonial imageSource={face1} fullname="Hiwot Kebede" 
-		testimonial="I found a website I was looking for for creating CV with amazing, elegant and unique design" />
-	
-	<CreateTestimonial imageSource={face2} fullname="Dereje Gezahegn" 
-		testimonial="CV Generator simplifies the way job seekers can have latest CV by only filling their information in the website" />
-	
-	<CreateTestimonial imageSource={face3} fullname="Kibru Bekele" 
-		testimonial="This website makes me feel free to fill my personal information to be shown on my CV to get them later in no time just only by logging in again" />
-
-
+	<h2 className=" align-self-center text-center text-primary fs-2 fw-bold border-0 border-primary border-bottom border-2 pb-2 "> Testimonials</h2>
+	<div className="d-flex flex-row gap-3 overflow-auto py-2 px-4">
+		<CreateTestimonial imageSource={face1} fullname="Hiwot Kebede" 
+			testimonial="I found a website I was looking for for creating CV with amazing, elegant and unique design" />
+		
+		<CreateTestimonial imageSource={face2} fullname="Dereje Gezahegn" 
+			testimonial="CV Generator simplifies the way job seekers can have latest CV by only filling their information in the website" />
+		
+		<CreateTestimonial imageSource={face3} fullname="Kibru Bekele" 
+			testimonial="This website makes me feel free to fill my personal information to be shown on my CV to get them later in no time just only by logging in again" />
+	</div>
 </div>
 );}
 

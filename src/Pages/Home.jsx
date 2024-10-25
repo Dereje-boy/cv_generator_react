@@ -4,6 +4,7 @@ import PortifolioPart from "/src/Components/Home1/PortifolioPart.jsx";
 import TestimonialPart from "/src/Components/Home1/TestimonialPart.jsx";
 import AboutUsPart from "/src/Components/Home1/AboutUsPart.jsx";
 import FAQPart from "/src/Components/Home1/FAQPart.jsx";
+import CTAPart from "/src/Components/Home1/CTAPart.jsx";
 
 export default function Home(){
 return(
@@ -14,5 +15,6 @@ return(
 		< TestimonialPart />
 		<AboutUsPart />
 		< FAQPart />
+		<CTAPart />
 	</div>
 );}

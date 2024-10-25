@@ -2,7 +2,7 @@ import profileImage from "/src/images/testimonials/face3.png";
 
 export default function AboutUsPart(){
 return(
-<div className="d-flex flex-column gap-3 py-5 px-4 bg-primary text-white">
+<div className="d-flex flex-column align-items-center gap-3 py-5 px-4 bg-primary text-white">
 	<h2 className="text-center fs-2 fw-bolder text-decoration-underline"> About Us</h2>
 	<CreateDiv />
 </div>
@@ -11,7 +11,7 @@ return(
 
 function CreateDiv(){
 return(
-	<div className="d-flex flex-row overflow-auto ">
+	<div style={{maxWidth:"600px"}} className="d-flex flex-row overflow-auto ">
 		<img height="200" src={profileImage} alt="profile photo" className="rounded rounded-circle border border-white border-3 p-1"/>
 		<div className="d-flex flex-column justify-content-center p-2 text-center" >
 			<p>
