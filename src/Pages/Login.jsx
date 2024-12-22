@@ -1,9 +1,17 @@
 import {useState} from 'react';
+import {useNavigate} from 'react-router-dom'
 
 import CreateFormControl from '../Components/CreateFormControl.jsx';
 
-	
+
+function savecookies({token, email}){
+	document.cookie = `token=${token};  max-age=${86400*30}`; // Expires in 30 day
+	document.cookie = `email=${email};  max-age=${86400*30}`; // Expires in 30 day
+}
+
 const LoginTab = ({switchhandler})=>{
+
+	const navigate = useNavigate();
 
 	const [nameofuniversity, setnameofuniversity] = useState('');
 	const handlenameofuniversity = (e)=>{ 
@@ -36,22 +44,25 @@ const LoginTab = ({switchhandler})=>{
 		e.preventDefault();
 		setData((prevData)=> 'sending post request to backend' + initialEmail + `password: ${initialPassword}`);
 		fetch('http://localhost:3000/users/login', options)
-			.then(response=>{
-				return response.json();
-			}).then(resjson=>{
-				setData(()=>JSON.stringify(resjson));
-				if(resjson.success){
-					setData("Signed in successfully, Redirecting you to profiles page")
-					setTimeout(()=>{
-						setData("Profiles page")
-					},2000)
-				}else{
-					setData("Email or password is incrorrect. Please try again.")
-				}
-			})
-			.catch(error=>{
-				setData(()=>'There is a network error, Please try again later.')
-			});
+		.then(response=>{
+			return response.json();	
+		})
+		.then(resjson=>{
+			if(resjson.success){
+				setData("Signed in successfully, Redirecting you to profiles page ");
+				//save cookies here
+				savecookies({email: resjson.otherdata.email, token:resjson.otherdata.token})
+				navigate('../profile')
+				setTimeout(()=>{
+					setData("Profiles page" + JSON.stringify(resjson))
+				},2000)
+			}else{
+				setData("Email or password is incrorrect. Please try again.")
+			}})
+		.catch(error=>{
+			setData(()=>'There is a network error, Please try again later.' + error)
+		});
+
 	}
 
 	return (
@@ -79,7 +90,7 @@ const LoginTab = ({switchhandler})=>{
 
 			{
 				data &&
-				<textarea rows="3"  editable={false} className="w-100 text-center border-white " value={data} > 
+				<textarea rows="3" editable={false} className="w-100 text-center border-white " value={data} > 
 				</textarea>
 			}
 
@@ -205,7 +216,7 @@ function Login(){
 	
 	return (
 		<div className="d-flex justify-content-center align-items-center pt-3">
-			{logintab ? <LoginTab switchhandler={switchhandler} />  
+			{logintab ? <LoginTab switchhandler={switchhandler}/>  
 				: 
 				<SignupTab switchhandler={switchhandler}/>}
 		</div>
