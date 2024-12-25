@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
+import {ClipLoader} from 'react-spinners';
 
 import CreateFormControl from '../Components/CreateFormControl.jsx';
 
@@ -19,6 +20,8 @@ const LoginTab = ({switchhandler})=>{
  	}
  	
 	const [data, setData] = useState();
+	const [loading, setLoading] = useState(false);
+
 	
 	const [initialEmail, setEmail] = useState('one@gmail.com');
 	const [initialPassword, setPassword] = useState('one@gmail.com');
@@ -42,9 +45,11 @@ const LoginTab = ({switchhandler})=>{
 
 	const login = (e)=>{
 		e.preventDefault();
+		setLoading(true)
 		setData((prevData)=> 'sending post request to backend' + initialEmail + `password: ${initialPassword}`);
 		fetch('http://localhost:3000/users/login', options)
 		.then(response=>{
+			setLoading(false)
 			return response.json();	
 		})
 		.then(resjson=>{
@@ -60,6 +65,7 @@ const LoginTab = ({switchhandler})=>{
 				setData("Email or password is incrorrect. Please try again.")
 			}})
 		.catch(error=>{
+			setLoading(false)
 			setData(()=>'There is a network error, Please try again later.' + error)
 		});
 
@@ -89,9 +95,16 @@ const LoginTab = ({switchhandler})=>{
 			<button type="submit"  className="btn btn-primary px-4 py-2 fs-6 mt-4">Login</button>
 
 			{
-				data &&
+				data && !loading &&
 				<textarea rows="3" editable={false} className="w-100 text-center border-white " value={data} > 
 				</textarea>
+			}
+
+			{
+				loading && 
+				<div className="py-2">
+					<ClipLoader />
+				</div>
 			}
 
 			<button onClick={switchhandler}
@@ -109,6 +122,7 @@ const SignupTab = ({switchhandler})=>{
 //this is all about sign up
 
 const [signupdata, setsignupdata] = useState('');
+const [loading, setLoading] = useState(false);
 
 const [signupemail, setsignupemail] = useState('hfg@gf.vom');
 const handlesignupemail = (e)=>{
@@ -141,10 +155,12 @@ const signupoptions = {
 
 const signup = (e)=>{
      e.preventDefault();
+     setLoading(true);
      setsignupdata("Afetere signup form")
 
      fetch('http://localhost:3000/users/signup', signupoptions)
      .then(res=>{
+     	setLoading(false);
      	return res.json()
      }).then(resjson=>{
      	const {success, reason, otherdata} = resjson;
@@ -159,6 +175,7 @@ const signup = (e)=>{
      		//setsignupdata(JSON.stringify(resjson));
      	}
      }).catch(e=>{
+     	setLoading(false);
          setsignupdata(e.message)
      })
 }
@@ -193,10 +210,17 @@ const signup = (e)=>{
 			<button type="submit"  className="btn btn-primary px-4 py-2 fs-6 mt-4"> Sign Up</button>
 
 			{
-				signupdata && 
+				signupdata && !loading && 
 					<textarea editable={false} className="w-100 text-center border-white" value={signupdata} > 
 					</textarea>
 
+			}
+
+			{
+				loading && 
+				<div className="py-2">
+					<ClipLoader />
+				</div>
 			}
 			
 			<button onClick={switchhandler} className="btn btn-outline-primary px-4 py-2 fs-6 mt-4"> Login </button>
