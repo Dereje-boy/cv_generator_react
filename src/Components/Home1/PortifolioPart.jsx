@@ -5,7 +5,9 @@ export default function PortifolioPart(){
 return (
 <div className="d-flex flex-column gap-1 bg-primary pt-3">
 
-	<h2 className=" align-self-center text-center text-white fs-2 fw-bold border-0 border-white border-bottom border-2 pb-2 "> Our Previous Works</h2>
+	<h2 className=" align-self-center text-center text-white fs-2 fw-bold border-0 border-white border-bottom border-2 pb-2 "> 
+		Our Previous Works
+	</h2>
 	
 	<div className="d-flex flex-row gap-3 overflow-auto py-3 px-4">
 		<CreatePortifolio imageSource={design1} title="Dereje Gezahegn" desc="This CV was created by Dereje Gezahegn with this good looking design. We hope him great looking for job time" />

@@ -5,9 +5,10 @@ import updateDocument from "/src/images/solutions/updateDocument.jpg";
 export default function SolutionsPart(){
 return(
 <div className="d-flex flex-column gap-1 py-3 mx-auto">
-	<h2 className="text-center align-self-center text-primary fs-2 fw-bold border-0 border-primary border-bottom border-2 pb-2"> Our Services  </h2>
-	<div className="d-flex flex-row gap-3 overflow-auto py-2 px-4 w-100 mx-5">
-		
+	<h2 className="text-center align-self-center text-primary fs-2 fw-bold border-0 border-primary border-bottom border-2 pb-2"> 
+		Our Services  
+	</h2>
+	<div className="d-flex flex-row gap-3 overflow-auto py-3 px-4">	
 		<CreateCard imageSource={shareableDocument} title="Shareable Documents" desc="You can download and share the CV in pdf format" />
 		<CreateCard imageSource={multipleDesign} title="Multiple Designs" desc="Different design options to choose from" />
 		<CreateCard imageSource={updateDocument} title="Updateable" desc="Update your information instantly" />
